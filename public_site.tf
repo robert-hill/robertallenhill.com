@@ -27,6 +27,14 @@ data "aws_route53_zone" "zone" {
   name = local.domain
 }
 
+resource "aws_route53_record" "www" {
+  zone_id = aws_route53_zone.personal.zone_id
+  name    = "www.robertallenhill.com"
+  type    = "A"
+  ttl     = "300"
+  records = [module.cloudfront_s3_cdn.cf_domain_name]
+}
+
 module "cloudfront_s3_cdn" {
   source  = "cloudposse/cloudfront-s3-cdn/aws"
   version = "0.80.0"
