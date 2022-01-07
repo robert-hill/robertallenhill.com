@@ -1,0 +1,44 @@
+locals {
+  domain = "robertallenhill.com"
+}
+
+module "acm_request_certificate" {
+  source                      = "cloudposse/acm-request-certificate/aws"
+  version                     = "0.16.0"
+  domain_name                 = local.domain
+  wait_for_certificate_issued = true
+}
+
+data "aws_route53_zone" "zone" {
+  name = local.domain
+}
+
+module "cloudfront_s3_cdn" {
+  source  = "cloudposse/cloudfront-s3-cdn/aws"
+  version = "0.80.0"
+
+  name               = "acme-example"
+  encryption_enabled = true
+
+  # DNS Settings
+  parent_zone_id      = data.aws_route53_zone.zone.id
+  acm_certificate_arn = module.acm_request_certificate.arn
+  aliases             = [local.domain]
+  ipv6_enabled        = true
+
+  # Caching Settings
+  default_ttl = 300
+  compress    = true
+
+  # Website settings
+  website_enabled = true
+  index_document  = "index.html" # absolute path in the S3 bucket
+  error_document  = "index.html" # absolute path in the S3 bucket
+
+  depends_on = [module.acm_request_certificate]
+}
+
+output s3_bucket {
+  description = "Name of the S3 origin bucket"
+  value       = module.cloudfront_s3_cdn.s3_bucket
+}
