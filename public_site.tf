@@ -30,7 +30,7 @@ data "aws_route53_zone" "zone" {
 resource "aws_route53_record" "www" {
   zone_id = aws_route53_zone.personal.zone_id
   name    = "www.robertallenhill.com"
-  type    = "A"
+  type    = "CNAME"
   ttl     = "300"
   records = [module.cloudfront_s3_cdn.cf_domain_name]
 }
