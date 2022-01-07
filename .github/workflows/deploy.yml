@@ -3,7 +3,7 @@ name: Update Infrastructure and deploy website code
 on:
   push:
     branches:
-    - master
+    - main
 
 jobs:
   deploy:
