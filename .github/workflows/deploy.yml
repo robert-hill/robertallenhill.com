@@ -37,4 +37,4 @@ jobs:
 
     # Upload our website code to our origin S3 bucket
     - name: Deploy static site to S3 bucket
-      run: aws s3 sync ./public s3://$(terraform output s3_bucket) --delete
+      run: aws s3 sync . /public s3://$(terraform output s3_bucket | cut -d '"' -f2) --delete
