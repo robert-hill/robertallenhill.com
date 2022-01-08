@@ -15,7 +15,7 @@ I will mostly write about things that I am interested in or am experimenting wit
 
 I don't expect, or really want, this website to become popular. I mostly just don't want the history of my writings to be recorded under a pseudonym on Reddit or any other platform. 
 
-In conclusion, this is my "two week notice" the *Social Media Web* which is how I have come to call this new era of the Internet. This iteration, where major corporations have taken over, is the least innovative time in the brief history of the Internet. It is imperative that we continue to add our own unique perspectives and quirks to the internet. Major social media platforms have nearly sucked what made the Internet great dry.
+In conclusion, this is my "two week notice" to the *Social Media Web* which is how I have come to call this new era of the Internet. This iteration, where major corporations have taken over, is the least innovative time in the brief history of the Internet. It is imperative that we continue to add our own unique perspectives and quirks to the internet. Major social media platforms have nearly sucked what made the Internet great dry.
 
   
 --- Robert
