@@ -1,0 +1,4 @@
+baseURL = 'http://robertallenhill.com/'
+languageCode = 'en-us'
+title = 'Robert Hill - Thoughts'
+theme = "papermod"
