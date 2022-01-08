@@ -1,4 +1,10 @@
---- 
+---
+name: Update Infrastructure and deploy website code
+
+on:
+  push:
+    branches:
+    - main
 jobs: 
   deploy: 
     defaults: 
