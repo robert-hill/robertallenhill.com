@@ -34,6 +34,20 @@ jobs:
     - run: terraform validate
     - run: terraform plan -out planfile
     - run: terraform apply planfile
+    
+    # Setup Latest Theme and Hugo
+    - name: Setup themes
+      run: git submodule update --init --recursive
+
+    - name: Update theme to Latest commit
+        run: git submodule update --remote --merge
+
+    - name: Setup hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+    - name: Build
+        run: hugo --buildDrafts --gc --verbose --minify
 
     # Upload our website code to our origin S3 bucket
     - name: Deploy static site to S3 bucket
