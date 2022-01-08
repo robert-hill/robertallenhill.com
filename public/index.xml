@@ -8,6 +8,15 @@
     <language>en-us</language>
     <lastBuildDate>Fri, 07 Jan 2022 00:19:36 -0800</lastBuildDate><atom:link href="http://robertallenhill.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>About</title>
+      <link>http://robertallenhill.com/about/</link>
+      <pubDate>Sat, 08 Jan 2022 00:57:52 -0800</pubDate>
+      
+      <guid>http://robertallenhill.com/about/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Giving this a try...</title>
       <link>http://robertallenhill.com/posts/welcome/</link>
       <pubDate>Fri, 07 Jan 2022 00:19:36 -0800</pubDate>
