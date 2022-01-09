@@ -1,13 +1,3 @@
-provider "aws" {
-  alias  = "east"
-  region = "us-east-1"
-}
-
-provider "aws" {
-  alias  = "west"
-  region = "us-west-2"
-}
-
 locals {
   domain_staging = "staging.robertallenhill.com"
 }
@@ -61,7 +51,7 @@ module "cloudfront_s3_cdn_staging" {
   depends_on = [module.acm_request_certificate_staging]
 }
 
-output "s3_bucket" {
+output "s3_bucket_staging" {
   description = "Name of the S3 origin bucket for Staging"
   value       = module.cloudfront_s3_cdn_staging.s3_bucket
 }
