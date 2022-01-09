@@ -1,4 +1,16 @@
 baseURL = 'http://robertallenhill.com/'
 languageCode = 'en-us'
-title = 'Robert Hill - Thoughts'
+title = 'Robert Hill'
 theme = "papermod"
+
+[menu]
+[[menu.main]]
+  identifier = 'about'
+  name = 'About'
+  url = '/about/'
+  weight = -110
+[[menu.main]]
+  identifier = 'posts'
+  name = 'Posts'
+  url = '/posts/'
+  weight = -120
