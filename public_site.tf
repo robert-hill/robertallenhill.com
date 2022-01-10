@@ -1,5 +1,5 @@
 locals {
-  domain = "robertallenhill.com"
+  domain     = "robertallenhill.com"
   depends_on = [aws_route53_zone.personal_staging]
 }
 
@@ -15,7 +15,7 @@ module "acm_request_certificate" {
 }
 
 data "aws_route53_zone" "zone" {
-  name = local.domain
+  name       = local.domain
   depends_on = [aws_route53_zone.personal_staging]
 }
 
