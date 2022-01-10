@@ -14,6 +14,11 @@ jobs:
     steps: 
       - 
         uses: actions/checkout@v2
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v1
+        with:
+          terraform_version: 1.1.3
+          cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
       - 
         name: "Configure AWS Credentials"
         uses: aws-actions/configure-aws-credentials@v1
@@ -21,6 +26,9 @@ jobs:
           aws-access-key-id: "${{ secrets.AWS_ACCESS_KEY_ID }}"
           aws-region: us-west-2
           aws-secret-access-key: "${{ secrets.AWS_SECRET_ACCESS_KEY }}"
+      - name: Terraform Init
+        id: init
+        run: terraform init
       - 
         name: "Setup themes"
         run: "git submodule update --init --recursive"
