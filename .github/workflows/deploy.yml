@@ -1,5 +1,5 @@
 ---
-name: Deploy website code
+name: "Deploy website code"
 
 on:
   pull_request:
@@ -10,7 +10,6 @@ on:
     - main
 
 jobs:
-  jobs:
   terraform:
     name: "Terraform"
     runs-on: ubuntu-latest
