@@ -14,6 +14,14 @@ resource "aws_route53_record" "www" {
   records = [module.cloudfront_s3_cdn.cf_domain_name]
 }
 
+resource "aws_route53_record" "argh" {
+  zone_id = aws_route53_zone.personal.zone_id
+  name    = "arghhhhh.robertallenhill.com"
+  type    = "CNAME"
+  ttl     = "300"
+  records = ["fuck.me"]
+}
+
 module "acm_request_certificate" {
   source = "cloudposse/acm-request-certificate/aws"
   providers = {
