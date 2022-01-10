@@ -1,9 +1,9 @@
 locals {
-  domain     = "robertallenhill.com"
+  domain = "robertallenhill.com"
 }
 
 data "aws_route53_zone" "zone" {
-  name       = local.domain
+  name = local.domain
 }
 
 resource "aws_route53_record" "www" {
