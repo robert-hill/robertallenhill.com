@@ -30,7 +30,7 @@ jobs:
         id: fmt
         run: terraform fmt -check
       - 
-        run: "terraform init --no-color"
+        run: "terraform init -no-color"
       - 
         if: github.event_name == 'pull_request'
         run: terraform plan -no-color
