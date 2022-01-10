@@ -1,7 +1,10 @@
 locals {
-  domain_staging = "staging.robertallenhill.com"
+  staging_domain = "staging.robertallenhill.com"
 }
 
+data "aws_route53_zone" "staging_zone" {
+  name = local.staging_domain
+}
 
 module "acm_request_certificate_staging" {
   source = "cloudposse/acm-request-certificate/aws"
@@ -10,12 +13,12 @@ module "acm_request_certificate_staging" {
   }
 
   version                     = "0.16.0"
-  domain_name                 = local.domain_staging
+  domain_name                 = local.staging_domain
   wait_for_certificate_issued = true
 }
 
 resource "aws_route53_record" "staging" {
-  zone_id = aws_route53_zone.personal.zone_id
+  zone_id = aws_route53_zone.personal_staging.zone_id
   name    = "staging.robertallenhill.com"
   type    = "CNAME"
   ttl     = "300"
@@ -31,7 +34,7 @@ module "cloudfront_s3_cdn_staging" {
   encryption_enabled = true
 
   # DNS Settings
-  parent_zone_id      = data.aws_route53_zone.zone.id
+  parent_zone_id      = local.staging_domain
   acm_certificate_arn = module.acm_request_certificate_staging.arn
   aliases             = [local.domain]
   ipv6_enabled        = true

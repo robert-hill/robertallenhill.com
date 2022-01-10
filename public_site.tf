@@ -1,5 +1,6 @@
 locals {
   domain = "robertallenhill.com"
+  depends_on = [aws_route53_zone.personal_staging]
 }
 
 module "acm_request_certificate" {
@@ -15,6 +16,7 @@ module "acm_request_certificate" {
 
 data "aws_route53_zone" "zone" {
   name = local.domain
+  depends_on = [aws_route53_zone.personal_staging]
 }
 
 resource "aws_route53_record" "www" {
@@ -50,7 +52,7 @@ module "cloudfront_s3_cdn" {
   index_document          = "index.html" # absolute path in the S3 bucket
   error_document          = "index.html" # absolute path in the S3 bucket
 
-  depends_on = [module.acm_request_certificate]
+  depends_on = [module.acm_request_certificate_staging]
 }
 
 output "s3_bucket" {
