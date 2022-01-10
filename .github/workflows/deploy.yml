@@ -23,7 +23,7 @@ jobs:
           terraform_wrapper: false
       - 
         name: "Configure AWS Credentials"
-        uses: aws-actions/configure-aws-credentials@v1.60
+        uses: aws-actions/configure-aws-credentials@v1.6.0
         with: 
           aws-access-key-id: "${{ secrets.AWS_ACCESS_KEY_ID }}"
           aws-region: us-west-2
