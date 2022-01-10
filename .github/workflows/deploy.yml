@@ -1,17 +1,17 @@
-name: "Update Infrastructure and deploy website code"
+---
+name: Deploy website code
 
 on:
   push:
     branches:
     - main
 jobs: 
-  deploy:
-    name: "Deploy"
+  deploy: 
     defaults: 
       run: 
         working-directory: "."
     runs-on: ubuntu-latest
-    steps:  
+    steps: 
       - 
         uses: actions/checkout@v2
       - 
