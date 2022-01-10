@@ -1,17 +1,19 @@
----
-name: Deploy test website code
+name: "Update Infrastructure and deploy website code"
 
 on:
-  pull_request:
+  push:
     branches:
-    - *
+    - main
 jobs: 
-  deploy: 
+  deploy:
+    name: "Deploy"
     defaults: 
       run: 
         working-directory: "."
     runs-on: ubuntu-latest
-    steps: 
+    steps:  
+      - 
+        uses: actions/checkout@v2
       - 
         name: "Configure AWS Credentials"
         uses: aws-actions/configure-aws-credentials@v1
@@ -35,4 +37,4 @@ jobs:
         run: "hugo -D --gc --verbose --minify"
       - 
         name: "Deploy static site to S3 bucket"
-        run: "aws s3 sync ./public s3://$(terraform output s3_bucket | cut -d '\"' -f2)/staging/ --delete"
+        run: "aws s3 sync ./public s3://$(terraform output s3_bucket | cut -d '\"' -f2) --delete"

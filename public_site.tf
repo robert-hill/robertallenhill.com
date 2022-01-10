@@ -1,26 +1,5 @@
-provider "aws" {
-  alias  = "east"
-  region = "us-east-1"
-}
-
-provider "aws" {
-  alias  = "west"
-  region = "us-west-2"
-}
-
 locals {
   domain = "robertallenhill.com"
-}
-
-module "acm_request_certificate" {
-  source = "cloudposse/acm-request-certificate/aws"
-  providers = {
-    aws = aws.east
-  }
-
-  version                     = "0.16.0"
-  domain_name                 = local.domain
-  wait_for_certificate_issued = true
 }
 
 data "aws_route53_zone" "zone" {
@@ -33,6 +12,17 @@ resource "aws_route53_record" "www" {
   type    = "CNAME"
   ttl     = "300"
   records = [module.cloudfront_s3_cdn.cf_domain_name]
+}
+
+module "acm_request_certificate" {
+  source = "cloudposse/acm-request-certificate/aws"
+  providers = {
+    aws = aws.east
+  }
+
+  version                     = "0.16.0"
+  domain_name                 = local.domain
+  wait_for_certificate_issued = true
 }
 
 module "cloudfront_s3_cdn" {
@@ -53,14 +43,12 @@ module "cloudfront_s3_cdn" {
   compress    = true
 
   # Website settings
-  website_enabled = true
+  website_enabled         = true
   dns_alias_enabled       = true
   versioning_enabled      = true
   allow_ssl_requests_only = false
-  index_document  = "index.html" # absolute path in the S3 bucket
-  error_document  = "index.html" # absolute path in the S3 bucket
-
-  depends_on = [module.acm_request_certificate]
+  index_document          = "index.html" # absolute path in the S3 bucket
+  error_document          = "index.html" # absolute path in the S3 bucket
 }
 
 output "s3_bucket" {
