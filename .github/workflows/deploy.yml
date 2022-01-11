@@ -11,6 +11,7 @@ on:
 jobs: 
   terraform:
     name: "Terraform"
+    needs: [terrform-staging, deploy-staging]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -83,7 +84,7 @@ jobs:
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: terraform apply -auto-approve
   deploy:
-    needs: terraform
+    needs: [terraform, terraform-staging] 
     if: github.ref == 'refs/heads/main' 
     defaults:
       run: 
@@ -210,4 +211,4 @@ jobs:
         run: "hugo -D --gc --verbose --minify"
       - 
         name: "Deploy static site to S3 bucket"
-        run: "aws s3 sync ./public s3://rhill-vcard-website-origin-staging/ --delete"
+        run: "aws s3 sync ./public s3://rhill-website-origin-staging/ --delete"
