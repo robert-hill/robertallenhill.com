@@ -200,7 +200,7 @@ jobs:
         if: github.event_name == 'push'
         run: terraform apply -auto-approve
   deploy-staging:
-    needs: terraform
+    needs: terraform-staging
     defaults:
       run: 
         working-directory: "."
