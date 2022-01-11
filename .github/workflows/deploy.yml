@@ -200,42 +200,42 @@ jobs:
         if: github.event_name == 'push'
         run: terraform apply -auto-approve
   deploy-staging:
-  needs: terraform
-  defaults:
-    run: 
-      working-directory: "."
-  runs-on: ubuntu-latest
-  steps: 
-    - 
-      uses: actions/checkout@v2
-    - name: Setup Terraform
-      uses: hashicorp/setup-terraform@v1
-      with:
-        terraform_version: 1.1.3
-    - 
-      name: "Configure AWS Credentials"
-      uses: aws-actions/configure-aws-credentials@v1
-      with: 
-        aws-access-key-id: "${{ secrets.AWS_ACCESS_KEY_ID }}"
-        aws-region: us-west-2
-        aws-secret-access-key: "${{ secrets.AWS_SECRET_ACCESS_KEY }}"
-    - name: Terraform Init
-      id: init
-      run: terraform init
-    - 
-      name: "Setup themes"
-      run: "git submodule update --init --recursive"
-    - 
-      name: "Update theme to Latest commit"
-      run: "git submodule update --remote --merge"
-    - 
-      name: "Setup hugo"
-      uses: peaceiris/actions-hugo@v2
-      with: 
-        hugo-version: latest
-    - 
-      name: Build
-      run: "hugo -D --gc --verbose --minify"
-    - 
-      name: "Deploy static site to S3 bucket"
-      run: "aws s3 sync ./public s3://rhill-vcard-website-origin-staging/ --delete"
+    needs: terraform
+    defaults:
+      run: 
+        working-directory: "."
+    runs-on: ubuntu-latest
+    steps: 
+      - 
+        uses: actions/checkout@v2
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v1
+        with:
+          terraform_version: 1.1.3
+      - 
+        name: "Configure AWS Credentials"
+        uses: aws-actions/configure-aws-credentials@v1
+        with: 
+          aws-access-key-id: "${{ secrets.AWS_ACCESS_KEY_ID }}"
+          aws-region: us-west-2
+          aws-secret-access-key: "${{ secrets.AWS_SECRET_ACCESS_KEY }}"
+      - name: Terraform Init
+        id: init
+        run: terraform init
+      - 
+        name: "Setup themes"
+        run: "git submodule update --init --recursive"
+      - 
+        name: "Update theme to Latest commit"
+        run: "git submodule update --remote --merge"
+      - 
+        name: "Setup hugo"
+        uses: peaceiris/actions-hugo@v2
+        with: 
+          hugo-version: latest
+      - 
+        name: Build
+        run: "hugo -D --gc --verbose --minify"
+      - 
+        name: "Deploy static site to S3 bucket"
+        run: "aws s3 sync ./public s3://rhill-vcard-website-origin-staging/ --delete"
