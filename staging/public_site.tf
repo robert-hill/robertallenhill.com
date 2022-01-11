@@ -1,19 +1,10 @@
 locals {
-  domain = "robertallenhill.com"
+  domain = "staging.robertallenhill.com"
 }
 
-data "aws_route53_zone" "zone" {
-  name = local.domain
+locals {
+  zone = "robertallenhill.com"
 }
-
-resource "aws_route53_record" "www" {
-  zone_id = aws_route53_zone.personal.zone_id
-  name    = "www.robertallenhill.com"
-  type    = "CNAME"
-  ttl     = "300"
-  records = [module.cloudfront_s3_cdn.cf_domain_name]
-}
-
 
 module "acm_request_certificate" {
   source = "cloudposse/acm-request-certificate/aws"
@@ -21,6 +12,7 @@ module "acm_request_certificate" {
     aws = aws.east
   }
 
+  zone_id                     = data.aws_route53_zone.zone.id
   version                     = "0.16.0"
   domain_name                 = local.domain
   wait_for_certificate_issued = true
@@ -30,7 +22,7 @@ module "cloudfront_s3_cdn" {
   source  = "cloudposse/cloudfront-s3-cdn/aws"
   version = "0.80.0"
 
-  name               = "rhill-vcard-website"
+  name               = "rhill-website-staging"
   encryption_enabled = true
 
   # DNS Settings
