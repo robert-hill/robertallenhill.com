@@ -24,7 +24,7 @@ module "acm_request_certificate" {
   providers = {
     aws = aws.east
   }
-  
+
   zone_id                     = data.aws_route53_zone.zone.id
   version                     = "0.16.0"
   domain_name                 = local.domain
