@@ -2,12 +2,16 @@ locals {
   domain = "staging.robertallenhill.com"
 }
 
+locals {
+  zone = "robertallenhill.com"
+}
+
 data "aws_route53_zone" "zone" {
-  name = local.domain
+  name = local.zone
 }
 
 resource "aws_route53_record" "www" {
-  zone_id = aws_route53_zone.personal.zone_id
+  zone_id = data.aws_route53_zone.zone.id
   name    = "staging.robertallenhill.com"
   type    = "CNAME"
   ttl     = "300"
@@ -20,7 +24,8 @@ module "acm_request_certificate" {
   providers = {
     aws = aws.east
   }
-
+  
+  zone_id                     = data.aws_route53_zone.zone.id
   version                     = "0.16.0"
   domain_name                 = local.domain
   wait_for_certificate_issued = true
