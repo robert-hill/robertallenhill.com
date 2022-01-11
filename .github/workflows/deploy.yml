@@ -11,7 +11,7 @@ on:
 jobs: 
   terraform:
     name: "Terraform"
-    needs: [terrform-staging, deploy-staging]
+    needs: [terraform-staging, deploy-staging]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
