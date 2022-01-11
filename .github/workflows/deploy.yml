@@ -10,7 +10,7 @@ on:
 
 jobs: 
   terraform:
-    name: "Terraform"
+    name: "Terraform - Production"
     needs: [terraform-staging, deploy-staging]
     defaults:
       run: 
@@ -87,6 +87,7 @@ jobs:
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: terraform apply -auto-approve
   deploy:
+    name: "Deploy - Production"
     needs: [terraform, terraform-staging] 
     if: github.ref == 'refs/heads/main' 
     defaults:
@@ -128,7 +129,7 @@ jobs:
         name: "Deploy static site to S3 bucket"
         run: "aws s3 sync ./public s3://rhill-vcard-website-origin/ --delete"
   terraform-staging:
-    name: "Terraform"
+    name: "Terraform - Staging"
     runs-on: ubuntu-latest
     defaults:
       run: 
@@ -176,6 +177,7 @@ jobs:
         if: github.event_name == 'pull_request'
         run: terraform apply -auto-approve
   deploy-staging:
+    name: "Deploy - Staging"
     needs: terraform-staging
     defaults:
       run: 
