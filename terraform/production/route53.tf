@@ -12,3 +12,11 @@ resource "aws_route53_record" "mail1-record" {
     "20 mx2.improvmx.com."
   ]
 }
+
+resource "aws_route53_record" "txt" {
+  zone_id = data.aws_route53_zone.zone.zone_id
+  name    = "robertallenhill.com"
+  type    = "TXT"
+  ttl     = "300"
+  records = ["v=spf1 include:spf.improvmx.com ~all"]
+}
