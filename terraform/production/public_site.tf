@@ -10,15 +10,6 @@ data "aws_route53_zone" "zone" {
   name = local.domain
 }
 
-resource "aws_route53_record" "www" {
-  zone_id = aws_route53_zone.personal.zone_id
-  name    = "www.robertallenhill.com"
-  type    = "CNAME"
-  ttl     = "300"
-  records = [module.cloudfront_s3_cdn.cf_domain_name]
-}
-
-
 module "acm_request_certificate" {
   source = "cloudposse/acm-request-certificate/aws"
   providers = {
