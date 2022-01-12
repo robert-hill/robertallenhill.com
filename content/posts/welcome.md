@@ -5,7 +5,7 @@ draft: false
 ---
 
 
-# Why am I doing this?
+### Why am I doing this?
 
 This my attempt to add to and revive the *"World Wide Web"* that I miss the most. Stumbling on an actual person's own website where you could really dig into what makes them tick. That is an almost forgotten art, writing for your own satisfaction.
 
@@ -18,4 +18,4 @@ I don't expect, or really want, this website to become popular. I mostly just do
 In conclusion, this is my "two week notice" to the *Social Media Web* which is how I have come to call this new era of the Internet. This iteration, where major corporations have taken over, is the least innovative time in the brief history of the Internet. It is imperative that we continue to add our own unique perspectives and quirks to the internet. Major social media platforms have nearly sucked what made the Internet great dry.
 
   
---- Robert
+-- Robert
