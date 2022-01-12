@@ -23,6 +23,7 @@ module "acm_request_certificate" {
 
   version                     = "0.16.0"
   domain_name                 = local.domain
+  aliases                     = aws_route53_record.www.name
   wait_for_certificate_issued = true
 }
 
