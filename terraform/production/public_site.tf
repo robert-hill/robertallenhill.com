@@ -41,7 +41,7 @@ module "cloudfront_s3_cdn" {
   # DNS Settings
   parent_zone_id      = data.aws_route53_zone.zone.id
   acm_certificate_arn = module.acm_request_certificate.arn
-  aliases             = [local.domain]
+  aliases             = [local.domain, local.www]
   ipv6_enabled        = true
 
   # Caching Settings
