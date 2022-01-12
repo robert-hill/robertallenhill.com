@@ -10,7 +10,7 @@ on:
 
 jobs: 
   terraform:
-    name: "Terraform - Production"]
+    name: "Terraform - Production"
     defaults:
       run: 
         working-directory: "./terraform/production"
