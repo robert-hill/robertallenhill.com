@@ -11,7 +11,6 @@ on:
 jobs: 
   terraform:
     name: "Terraform - Production"
-    needs: [terraform-staging, deploy-staging]
     defaults:
       run: 
         working-directory: "./terraform/production"
@@ -88,7 +87,7 @@ jobs:
         run: terraform apply -auto-approve
   deploy:
     name: "Deploy - Production"
-    needs: [terraform, terraform-staging] 
+    needs: terraform
     if: github.ref == 'refs/heads/main' 
     defaults:
       run: 
@@ -117,7 +116,7 @@ jobs:
           hugo-version: latest
       - 
         name: Build
-        run: "hugo -D --gc --verbose --minify"
+        run: "hugo --gc --verbose --minify"
       - 
         name: "Deploy static site to S3 bucket"
         run: "aws s3 sync ./public s3://rhill-vcard-website-origin/ --delete"
@@ -199,7 +198,7 @@ jobs:
           hugo-version: latest
       - 
         name: Build
-        run: "hugo -D --gc --verbose --minify"
+        run: "hugo -D --baseURL='http://staging.robertallenhill.com/' --gc --verbose --minify"
       - 
         name: "Deploy static site to S3 bucket"
         run: "aws s3 sync ./public s3://rhill-website-staging-origin/ --delete"
