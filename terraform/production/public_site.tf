@@ -2,6 +2,10 @@ locals {
   domain = "robertallenhill.com"
 }
 
+locals {
+  www = "www.robertallenhill.com"
+}
+
 data "aws_route53_zone" "zone" {
   name = local.domain
 }
@@ -23,6 +27,7 @@ module "acm_request_certificate" {
 
   version                     = "0.16.0"
   domain_name                 = local.domain
+  subject_alternative_names   = [local.www]
   wait_for_certificate_issued = true
 }
 
