@@ -13,4 +13,4 @@ I have been working with technology for nearly 20 years, and have held numerous 
 Outside of my professional life, I am an avid cyclist with many thousands of touring miles under the belt. I also enjoy hiking and climbing, ham radio, and stargazing as much as I can.
 ### How can you reach me?
 
-I prefer email, and you can reach me at robert@robertallenhill.com. You can also reach me [@robyr](https://twitter.com/robyr) on twitter, and at [robert-hill](https://github.com/robert-hill) on GitHub.
+I prefer email, and you can reach me [via e-mail](me@robertallenhill.com). You can also reach me [@robyr](https://twitter.com/robyr) on twitter, and at [robert-hill](https://github.com/robert-hill) on GitHub.
