@@ -18,5 +18,5 @@ resource "aws_route53_record" "txt" {
   name    = "robertallenhill.com"
   type    = "TXT"
   ttl     = "300"
-  record  = "v=spf1 include:spf.improvmx.com ~all"
+  records  = ["v=spf1 include:spf.improvmx.com ~all"]
 }
