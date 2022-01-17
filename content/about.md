@@ -7,7 +7,7 @@ I have been working with technology for nearly 20 years, and have held numerous 
 
 ### Personal Life
 
-I am a southerner who moved west like a million others like me and settled in San Franciso. I live with my wonderful partner of nine years and a wonderfully fluffy orange cat that we love.
+I am a southerner who moved west like a million others like me and settled in San Francisco. I live with my wonderful partner of nine years and a wonderfully fluffy orange cat that we love.
 
 I am an avid cyclist with thousands of touring miles under the belt. I also enjoy hiking and climbing, ham radio, and stargazing as much as I can.
 ### How can you reach me?
