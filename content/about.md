@@ -12,4 +12,4 @@ I am a southerner who moved west like a million others like me and settled in Sa
 I am an avid cyclist with thousands of touring miles under the belt. I also enjoy hiking and climbing, ham radio, and stargazing as much as I can.
 ### How can you reach me?
 
-I prefer email, and you can reach me [via e-mail](me@robertallenhill.com). You can also reach me [@robyr](https://twitter.com/robyr) on twitter, and at [robert-hill](https://github.com/robert-hill) on GitHub.
+I prefer email, and you can reach me [via e-mail](mailto:me@robertallenhill.com). You can also reach me [@robyr](https://twitter.com/robyr) on twitter, and at [robert-hill](https://github.com/robert-hill) on GitHub.
