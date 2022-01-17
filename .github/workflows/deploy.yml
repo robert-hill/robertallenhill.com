@@ -114,7 +114,7 @@ jobs:
         run: "hugo --gc --verbose --minify"
       - 
         name: "Deploy static site to S3 bucket"
-        run: "aws s3 sync --cf-invalidate ./public s3://rhill-vcard-website-origin/ --delete"
+        run: "aws s3 sync ./public s3://rhill-vcard-website-origin/ --delete --cache-control 'max-age=0, must-revalidate, proxy-revalidate, public'"
   terraform-staging:
     name: "Terraform - Staging"
     runs-on: ubuntu-latest
@@ -182,4 +182,4 @@ jobs:
         run: "hugo -D --baseURL='http://staging.robertallenhill.com/' --gc --verbose --minify"
       - 
         name: "Deploy static site to S3 bucket"
-        run: "aws s3 sync --cf-invalidate ./public s3://rhill-website-staging-origin/ --delete"
+        run: "aws s3 sync ./public s3://rhill-website-staging-origin/ --delete --cache-control 'max-age=0, must-revalidate, proxy-revalidate, public'"
