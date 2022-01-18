@@ -8,7 +8,7 @@ on:
     - '**.tf'
 
 jobs: 
-  production-terraform:
+  terraform:
     name: "Terraform - Production"
     runs-on: ubuntu-latest
     defaults:
