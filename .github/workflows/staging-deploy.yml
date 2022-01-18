@@ -4,10 +4,10 @@ on:
   pull_request:
     branches:
     - main
+
 jobs:
   deploy-staging:
     name: "Deploy - Staging"
-    needs: terraform-staging
     defaults:
       run: 
         working-directory: "."
