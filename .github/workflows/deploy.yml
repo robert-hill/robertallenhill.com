@@ -12,6 +12,10 @@ jobs:
   terraform:
     name: "Terraform - Production"
     runs-on: ubuntu-latest
+    on:
+      pull_request:
+      paths:
+        - '**.tf'
     defaults:
       run:
         working-directory: './terraform/production'
@@ -118,6 +122,10 @@ jobs:
   terraform-staging:
     name: "Terraform - Staging"
     runs-on: ubuntu-latest
+    on:
+      pull_request:
+      paths:
+        - '**.js'
     defaults:
       run: 
         working-directory: "./terraform/staging"
