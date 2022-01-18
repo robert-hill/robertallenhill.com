@@ -2,9 +2,9 @@ name: "Staging Terraform"
 on:
   pull_request:
     branches:
-    - main
+      - main
     paths:
-    - '**.tf'
+      - '**.tf'
  terraform-staging:
     name: "Terraform - Staging"
     runs-on: ubuntu-latest
