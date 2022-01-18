@@ -1,4 +1,5 @@
 name: "Staging Terraform"
+
 on:
   pull_request:
     branches:
