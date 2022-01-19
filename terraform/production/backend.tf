@@ -21,6 +21,10 @@ resource "aws_s3_bucket" "terraform" {
   bucket        = "rhill-terraform"
   acl           = "private"
   force_destroy = false
+
+  versioning {
+    enabled = true
+  }
   server_side_encryption_configuration {
     rule {
       apply_server_side_encryption_by_default {
