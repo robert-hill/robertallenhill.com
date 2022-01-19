@@ -44,6 +44,7 @@ jobs:
   terraform-production:
     name: "Terraform - Production"
     runs-on: ubuntu-latest
+    needs: terraform-staging
     defaults:
       run:
         working-directory: './terraform/production'
