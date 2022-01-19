@@ -27,7 +27,7 @@ resource "aws_s3_bucket" "terraform" {
   }
 
   logging {
-    target_bucket = aws_s3_bucket.terraform.id
+    target_bucket = data.aws_s3_bucket.terraform.id
     target_prefix = "logs/"
   }
   server_side_encryption_configuration {
