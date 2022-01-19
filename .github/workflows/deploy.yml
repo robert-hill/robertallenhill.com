@@ -31,6 +31,11 @@ jobs:
             aws-access-key-id: "${{ secrets.AWS_ACCESS_KEY_ID }}"
             aws-region: us-west-2
             aws-secret-access-key: "${{ secrets.AWS_SECRET_ACCESS_KEY }}"
+        
+        - name: Terraform fmt
+          id: fmt
+          run: terraform fmt -check
+          continue-on-error: false
 
         - name: Terraform Init
           id: init
@@ -54,6 +59,7 @@ jobs:
         - name: Terraform Apply
           if: github.event_name == 'pull_request'
           run: terraform apply -auto-approve
+          continue-on-error: false
 
   terraform-production:
     name: "Terraform - Production"
