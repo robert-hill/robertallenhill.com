@@ -38,3 +38,10 @@ resource "aws_s3_bucket" "terraform" {
     }
   }
 }
+
+resource "aws_s3_bucket_public_access_block" "example" {
+  bucket = aws_s3_bucket.terraform.id
+
+  block_public_acls   = true
+  block_public_policy = true
+}
