@@ -25,6 +25,11 @@ resource "aws_s3_bucket" "terraform" {
   versioning {
     enabled = true
   }
+
+  logging {
+    target_bucket = aws_s3_bucket.terraform.id
+    target_prefix = "logs/"
+  }
   server_side_encryption_configuration {
     rule {
       apply_server_side_encryption_by_default {
