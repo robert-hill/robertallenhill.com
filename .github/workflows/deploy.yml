@@ -69,7 +69,7 @@ jobs:
   terraform-production:
     name: "Terraform - Production"
     permissions:
-      contents: read
+      contents: readx
       id-token: write
       pull-requests: write
       security-events: write
