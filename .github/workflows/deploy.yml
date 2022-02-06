@@ -65,7 +65,6 @@ jobs:
           if: github.event_name == 'pull_request'
           run: terraform apply -auto-approve
           continue-on-error: false
-
   terraform-production:
     name: "Terraform - Production"
     permissions:
@@ -83,7 +82,7 @@ jobs:
     - uses: hashicorp/setup-terraform@v1
       with: 
         terraform_version: "1.1.5"
-        terraform_wrapper: false        
+        terraform_wrapper: false
     - name: "Configure AWS Credentials"
       uses: aws-actions/configure-aws-credentials@v1
       with: 
