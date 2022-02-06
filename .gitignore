@@ -33,6 +33,7 @@ override.tf.json
 /public
 /resources
 /themes
+/scratch
 
 # General smart stuff to ignore
 
