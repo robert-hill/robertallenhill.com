@@ -1,6 +1,10 @@
 ---
-title: "Bike Camping Doesn't Need to be Hard."
+title: Bike Camping Doesn't Need to be Hard.
+slug: angel-island-bike
 date: 2022-02-04T16:48:01-08:00
+description: Bikepacking in urban spaces can be a lot of fun!"
+author: Robert Hill
+lastmod: 2022-04-02T05:16:25.191Z
 draft: false
 ---
 
@@ -8,23 +12,23 @@ draft: false
 
 This week I took Thursday and Friday off having secured an extremely popular campsite on the San Francisco Bay's Angel Island. I have camped here before, back in 2017 with my partner, but this was my first solo trip just for fun and solitude. 
 
-![Ferry view of Angel Island](/images/4/ferry_view.jpg)
+![Ferry view of Angel Island](/images/angel-island/ferry_view.jpg)
 
 ### Campsite Location is Important
 
 I first camped on an East Bay side campsite on Angel Island. It was fantastically wild for being so close to San Francisco, with perfect darkness at night with only the foghorns reminding you that you are right in the middle of one of the largest metropolises in the United States. 
 
-![Campsite number five](/images/4/campsite5.jpg)
+![Campsite number five](/images/angel-island/campsite5.jpg)
 
 It is a truly unique experience anywhere on the island. It is a fairly rugged terrain if you are willing to skirt some rules on unmarked trails, or even if you ride or hike the marked trails. There are a number of sights to see including the summit of Mount Livermore and even the beaches are unique as they exist wholly within the San Francisco Bay.
 
-!["Not A Thru Trail" indeed...](/images/4/unfortunate.jpg)
+!["Not A Thru Trail" indeed...](/images/angel-island/unfortunate.jpg)
 
 The site I stayed at this trip was Campsite #5. Camps 4, 5, and 6 are regarded as some of the most beautiful campsites on the island. From all sites in this group you have a view of San Francisco, the Bay Bridge, and the Golden Gate Bridge from your camp site or within an extremely short walk from your campsite.
 
 At my camp at site #5 I had a picnic table just outside of my tent where I had panoramic views of the city skyline, both bridges, and the Marin Headlands. It was a truly beautiful and calming experience. I was reading a book during sunset catching the reflection on the buildings of San Francisco and taking in the intense glow of the sun behind Hawk Hill and the Golden Gate Bridge. It reminded me of why I moved here in the first place. 
 
-![Sunset over Marin](/images/4/sunset.jpg)
+![Sunset over Marin](/images/angel-island/sunset.jpg)
 
 ### What to Bring
 
@@ -42,7 +46,7 @@ The real benefit of such an amazing State Park so close to San Francisco is that
 
 If you are just getting into bikpacking or bike touring, I believe that destinations like this are far more likely to cement the love of the ride than major endeavors. It is much more approachable for a beginner to take a 30 minute ferry ride than it is to embark on a 30+ mile, 5+ hour long ride to somewhere like Samuel P. Taylor State Park in Olema or China Camp State Park outside of San Rafael. 
 
-![Fully loaded](/images/4/packed_bike.jpg)
+![Fully loaded](/images/angel-island/packed_bike.jpg)
 
 ### Final Thoughts
 
@@ -51,3 +55,4 @@ As someone who has toured for years over the western United States, nothing make
 If you are in the Bay Area, Angel Island is 100% worth the trip!
 
 -- Robert
+

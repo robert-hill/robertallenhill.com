@@ -1,8 +1,12 @@
 ---
-title: "Giving this a try..."
+title: Giving this a try...
+slug: intro
 date: 2022-01-07T00:19:36-08:00
 draft: false
-tags: ["intro", "personal"]
+tags:
+  - intro
+  - personal
+lastmod: 2022-04-02T05:16:27.706Z
 ---
 
 

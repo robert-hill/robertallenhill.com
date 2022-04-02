@@ -1,8 +1,14 @@
 ---
-title: "Do I really need a high-end laptop?"
+title: Do I really need a high-end laptop?
+description: My company issued me a high-end laptop and I wish they hadn't.
+slug: laptop-blues
 date: 2022-01-16T22:22:44-08:00
 draft: false
-tags: ["philosophy", "development", "technology"]
+tags:
+  - philosophy
+  - development
+  - technology
+lastmod: 2022-04-02T05:16:25.997Z
 ---
 
 ### Why do I keep getting top spec machines?
