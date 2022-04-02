@@ -8,7 +8,7 @@ tags:
   - philosophy
   - development
   - technology
-lastmod: 2022-04-02T03:14:41.675Z
+lastmod: 2022-04-02T05:16:25.997Z
 ---
 
 ### Why do I keep getting top spec machines?

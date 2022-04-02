@@ -4,7 +4,7 @@ slug: angel-island-bike
 date: 2022-02-04T16:48:01-08:00
 description: Bikepacking in urban spaces can be a lot of fun!"
 author: Robert Hill
-lastmod: 2022-04-02T04:13:25.526Z
+lastmod: 2022-04-02T05:16:25.191Z
 draft: false
 ---
 

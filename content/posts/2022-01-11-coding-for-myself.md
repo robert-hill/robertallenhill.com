@@ -1,8 +1,13 @@
 ---
-title: "Coding for myself."
+title: Coding for myself.
+slug: coding-for-myself
 date: 2022-01-11T20:25:51-08:00
 draft: false
-tags: ["development", "projects", "automation"]
+tags:
+  - development
+  - projects
+  - automation
+lastmod: 2022-04-02T05:16:26.806Z
 ---
 
 ### The Great Reengineering of 2022
