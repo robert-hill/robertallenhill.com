@@ -40,3 +40,6 @@ override.tf.json
 node_modules
 dist
 tmp
+.vscode/
+.frontmatter/
+frontmatter.json

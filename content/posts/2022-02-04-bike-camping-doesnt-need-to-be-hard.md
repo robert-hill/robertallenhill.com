@@ -1,6 +1,10 @@
 ---
-title: "Bike Camping Doesn't Need to be Hard."
+title: Bike Camping Doesn't Need to be Hard.
+slug: angel-island-bike
 date: 2022-02-04T16:48:01-08:00
+description: Bikepacking in urban spaces can be a lot of fun!"
+author: Robert Hill
+lastmod: 2022-04-02T02:56:54.975Z
 draft: false
 ---
 
@@ -51,3 +55,4 @@ As someone who has toured for years over the western United States, nothing make
 If you are in the Bay Area, Angel Island is 100% worth the trip!
 
 -- Robert
+
