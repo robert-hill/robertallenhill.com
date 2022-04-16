@@ -1,12 +1,13 @@
 ---
 title: Giving this a try...
 slug: intro
+author: Robert Hill
 date: 2022-01-07T00:19:36-08:00
 draft: false
 tags:
   - intro
   - personal
-lastmod: 2022-04-02T05:16:27.706Z
+lastmod: 2022-04-02T06:13:37.235Z
 ---
 
 

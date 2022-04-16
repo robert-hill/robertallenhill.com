@@ -1,13 +1,14 @@
 ---
 title: Coding for myself.
 slug: coding-for-myself
+author: Robert Hill
 date: 2022-01-11T20:25:51-08:00
 draft: false
 tags:
   - development
   - projects
   - automation
-lastmod: 2022-04-02T05:16:26.806Z
+lastmod: 2022-04-02T06:13:32.229Z
 ---
 
 ### The Great Reengineering of 2022
