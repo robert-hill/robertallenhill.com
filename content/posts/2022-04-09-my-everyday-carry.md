@@ -4,14 +4,19 @@ slug: everyday-carry
 date: 2022-04-16T14:00:36.392Z
 description: This what I actually carry every single day.
 author: Robert Hill
-lastmod: 2022-04-16T21:07:42.170Z
+lastmod: 2022-04-17T04:59:56.267Z
 draft: false
 preview: ""
 tags:
   - gear
 categories: ""
 ---
+# Why Do We Care What People Carry
+For years, I have been very keen on exploring what people consider essential for work, play, and otherwise living life. I tend to believe that most people can learn a whole lot by watching what others us to accomplish great things. This can be as simple as a set of small tools or as complex as the toolset that a specialized engineer would carry to investigate a sophisticated piece of equipment in the field. What someone prioritizes on their person or carry bags can teach you a lot about their workflow and approaches to solving problems.
 
+This post is about what I carry to solve problems or do things on a daily basis. This isn't everything I would ever carry or need for every situation, and I regularly swap in and out items that will help me if I need to do something specific. I hope to capture my must-haves more than my edge case needs, and I hope this post can stay updated as I change what matters most as the years click by. 
+
+Maybe I will do deep dives into some of my personal digital workflows in further posts, because I think that matters even more than the physical objects I use, but that is a subject that will take me some time to really write down, so let's just focus on what I use on a daily basis for now.
 # Front Right Pocket
 ## Knife
 I have carried a pocket knife since I turned eighteen. I typically rotate between four Benchmade models, all with their own purpose.
@@ -86,7 +91,7 @@ I was interested in trying a wallet like this because as time has marched on, I 
 
 I found that I didn't really miss my old bifold wallet, and it was much more comfortable. It looks absolutely stunning, with extremely high quality full grain leather and subdued stitching holding the layers together. It has been through accidental soaks in the pool and rainstorms and looks brand new to this day.
 
-I have several Waterfield bags, including one I'll feature later in this post, and I knew that I could trust the quality of the Clyff wallet, and I am certainly glad I gave it a try. If I needed to make the decision to get a new wallet today, I would feel confident in buying another Clyff.
+I have several Waterfield bags (including one I'll feature later in this post.) so I knew that I could trust the quality of the Clyff wallet. I am certainly glad I gave it a try. If I needed to make the decision to get a new wallet today, I would feel confident in buying another Clyff.
 
 # Left Rear Pocket
 ## Prybar
