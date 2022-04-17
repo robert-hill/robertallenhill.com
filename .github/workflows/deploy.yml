@@ -9,64 +9,8 @@ on:
     - main
 
 jobs: 
-  terraform-staging:
-      name: "Terraform - Staging"
-      permissions:
-        contents: read
-        pull-requests: write
-        id-token: write
-        security-events: write
-      runs-on: ubuntu-latest
-      defaults:
-        run: 
-          working-directory: "./terraform/staging"
-      steps:
-        - name: Checkout
-          uses: actions/checkout@v2
-
-        - 
-          uses: hashicorp/setup-terraform@v1
-          with: 
-            terraform_version: "1.1.5"
-            terraform_wrapper: false
-        - 
-          name: "Configure AWS Credentials"
-          uses: aws-actions/configure-aws-credentials@v1
-          with: 
-            aws-region: us-west-2
-            role-to-assume: "arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/github"
-        - run: aws sts get-caller-identity
-        
-        - name: Terraform fmt
-          id: fmt
-          run: terraform fmt -check
-          continue-on-error: false
-
-        - name: Terraform Init
-          id: init
-          run: terraform init -no-color
-        
-        - name: Terraform Validate
-          id: validate
-          run: terraform validate -no-color
-
-#        - name: Run tfsec
-#          uses: tfsec/tfsec-sarif-action@9a83b5c3524f825c020e356335855741fd02745f
-#          with:
-#            sarif_file: tfsec.sarif         
-
-#        - name: Upload SARIF file
-#          uses: github/codeql-action/upload-sarif@v1
-#          with:
-#            # Path to SARIF file relative to the root of the repository
-#            sarif_file: tfsec.sarif  
-
-        - name: Terraform Apply
-          if: github.event_name == 'pull_request'
-          run: terraform apply -auto-approve
-          continue-on-error: false
   terraform-production:
-    name: "Terraform - Production"
+    name: "Terraform"
     permissions:
       contents: read
       id-token: write
@@ -155,7 +99,7 @@ jobs:
       if: github.ref == 'refs/heads/main' && github.event_name == 'push'
       run: terraform apply -auto-approve
   deploy:
-    name: "Deploy - Production"
+    name: "Publish"
     permissions:
       contents: read
       id-token: write
