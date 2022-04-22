@@ -1,6 +1,6 @@
 baseURL: "https://www.robertallenhill.com/"
-title: Robert Allen Hill
-paginate: 5
+title: "Robert Allen Hill"
+paginate: 7
 theme: papermod
 
 enableInlineShortcodes: true
@@ -60,13 +60,17 @@ params:
     ShowBreadCrumbs: true
     ShowCodeCopyButtons: true
 
-    profileMode:
-        enabled: true
-        title: Hello!
-        #imageUrl: "#"
-        #imageTitle: my image
-        # imageWidth: 120
-        # imageHeight: 120
+    # profileMode:
+    #     enabled: false
+    #     #imageUrl: "#"
+    #     #imageTitle: my image
+    #     # imageWidth: 120
+    #     # imageHeight: 120
+    homeInfoParams:
+        Title: Blog
+        Content: My semi-rarely updated journal where where I can muse on topics in tech, bicycles, tools, and other nerdery. I am mostly using this to condition myself to write more often, and to reduce my usage of social media services.
+
+
         buttons:
             - name: Posts
               url: posts/
