@@ -38,6 +38,10 @@ module "cloudfront_s3_cdn" {
   # Caching Settings
   default_ttl = 300
   compress    = true
+  cached_methods = [
+    "GET",
+    "HEAD"
+  ]
 
   # Website settings
   website_enabled         = true
