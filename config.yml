@@ -67,10 +67,7 @@ params:
     #     # imageWidth: 120
     #     # imageHeight: 120
     homeInfoParams:
-        Title: Blog
         Content: My semi-rarely updated journal where where I can muse on topics in tech, bicycles, tools, and other nerdery. I am mostly using this to condition myself to write more often, and to reduce my usage of social media services.
-
-
         buttons:
             - name: Posts
               url: posts/
