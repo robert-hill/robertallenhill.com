@@ -45,7 +45,7 @@ module "cloudfront_s3_cdn" {
   versioning_enabled      = true
   allow_ssl_requests_only = false
   index_document          = "index.html" # absolute path in the S3 bucket
-  error_document          = "404.html" # absolute path in the S3 bucket
+  error_document          = "404.html"   # absolute path in the S3 bucket
 }
 
 output "s3_bucket" {
