@@ -39,6 +39,9 @@ module "cloudfront_s3_cdn" {
   default_ttl = 300
   compress    = true
 
+  # WAF
+  web_acl_id = aws_wafv2_web_acl.robertallenhill_com.arn
+
   # Website settings
   website_enabled         = true
   dns_alias_enabled       = true
@@ -46,6 +49,206 @@ module "cloudfront_s3_cdn" {
   allow_ssl_requests_only = false
   index_document          = "index.html" # absolute path in the S3 bucket
   error_document          = "404.html"   # absolute path in the S3 bucket
+}
+
+resource "aws_wafv2_web_acl" "robertallenhill_com" {
+  provider = aws.east
+  name     = "robertallenhill-com-waf"
+  scope    = "CLOUDFRONT"
+  default_action {
+    allow {}
+  }
+  visibility_config {
+    cloudwatch_metrics_enabled = true
+    metric_name                = "robertallenhill-com-waf"
+    sampled_requests_enabled   = true
+  }
+
+  rule {
+    name     = "AWS-AWSManagedRulesAdminProtectionRuleSet"
+    priority = 0
+
+    override_action {
+
+      none {}
+    }
+
+    statement {
+
+      managed_rule_group_statement {
+        name        = "AWSManagedRulesAdminProtectionRuleSet"
+        vendor_name = "AWS"
+      }
+    }
+
+    visibility_config {
+      cloudwatch_metrics_enabled = true
+      metric_name                = "AWS-AWSManagedRulesAdminProtectionRuleSet"
+      sampled_requests_enabled   = true
+    }
+  }
+  rule {
+    name     = "AWS-AWSManagedRulesAmazonIpReputationList"
+    priority = 1
+
+    override_action {
+
+      none {}
+    }
+
+    statement {
+
+      managed_rule_group_statement {
+        name        = "AWSManagedRulesAmazonIpReputationList"
+        vendor_name = "AWS"
+      }
+    }
+
+    visibility_config {
+      cloudwatch_metrics_enabled = true
+      metric_name                = "AWS-AWSManagedRulesAmazonIpReputationList"
+      sampled_requests_enabled   = true
+    }
+  }
+  rule {
+    name     = "AWS-AWSManagedRulesAnonymousIpList"
+    priority = 2
+
+    override_action {
+
+      none {}
+    }
+
+    statement {
+
+      managed_rule_group_statement {
+        name        = "AWSManagedRulesAnonymousIpList"
+        vendor_name = "AWS"
+      }
+    }
+
+    visibility_config {
+      cloudwatch_metrics_enabled = true
+      metric_name                = "AWS-AWSManagedRulesAnonymousIpList"
+      sampled_requests_enabled   = true
+    }
+  }
+  rule {
+    name     = "AWS-AWSManagedRulesCommonRuleSet"
+    priority = 3
+
+    override_action {
+
+      none {}
+    }
+
+    statement {
+
+      managed_rule_group_statement {
+        name        = "AWSManagedRulesCommonRuleSet"
+        vendor_name = "AWS"
+      }
+    }
+
+    visibility_config {
+      cloudwatch_metrics_enabled = true
+      metric_name                = "AWS-AWSManagedRulesCommonRuleSet"
+      sampled_requests_enabled   = true
+    }
+  }
+  rule {
+    name     = "AWS-AWSManagedRulesKnownBadInputsRuleSet"
+    priority = 4
+
+    override_action {
+
+      none {}
+    }
+
+    statement {
+
+      managed_rule_group_statement {
+        name        = "AWSManagedRulesKnownBadInputsRuleSet"
+        vendor_name = "AWS"
+      }
+    }
+
+    visibility_config {
+      cloudwatch_metrics_enabled = true
+      metric_name                = "AWS-AWSManagedRulesKnownBadInputsRuleSet"
+      sampled_requests_enabled   = true
+    }
+  }
+  rule {
+    name     = "AWS-AWSManagedRulesPHPRuleSet"
+    priority = 5
+
+    override_action {
+
+      none {}
+    }
+
+    statement {
+
+      managed_rule_group_statement {
+        name        = "AWSManagedRulesPHPRuleSet"
+        vendor_name = "AWS"
+      }
+    }
+
+    visibility_config {
+      cloudwatch_metrics_enabled = true
+      metric_name                = "AWS-AWSManagedRulesPHPRuleSet"
+      sampled_requests_enabled   = true
+    }
+  }
+  rule {
+    name     = "AWS-AWSManagedRulesSQLiRuleSet"
+    priority = 6
+
+    override_action {
+
+      none {}
+    }
+
+    statement {
+
+      managed_rule_group_statement {
+        name        = "AWSManagedRulesSQLiRuleSet"
+        vendor_name = "AWS"
+      }
+    }
+
+    visibility_config {
+      cloudwatch_metrics_enabled = true
+      metric_name                = "AWS-AWSManagedRulesSQLiRuleSet"
+      sampled_requests_enabled   = true
+    }
+  }
+  rule {
+    name     = "AWS-AWSManagedRulesWordPressRuleSet"
+    priority = 9
+
+    override_action {
+
+      none {}
+    }
+
+    statement {
+
+      managed_rule_group_statement {
+        name        = "AWSManagedRulesWordPressRuleSet"
+        vendor_name = "AWS"
+      }
+    }
+
+    visibility_config {
+      cloudwatch_metrics_enabled = true
+      metric_name                = "AWS-AWSManagedRulesWordPressRuleSet"
+      sampled_requests_enabled   = true
+    }
+  }
+
 }
 
 output "s3_bucket" {
