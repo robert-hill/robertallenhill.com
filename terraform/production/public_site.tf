@@ -1,15 +1,3 @@
-locals {
-  domain = "robertallenhill.com"
-}
-
-locals {
-  www = "www.robertallenhill.com"
-}
-
-data "aws_route53_zone" "zone" {
-  name = local.domain
-}
-
 module "acm_request_certificate" {
   source = "cloudposse/acm-request-certificate/aws"
   providers = {
@@ -249,9 +237,4 @@ resource "aws_wafv2_web_acl" "robertallenhill_com" {
     }
   }
 
-}
-
-output "s3_bucket" {
-  description = "Name of the S3 origin bucket"
-  value       = module.cloudfront_s3_cdn.s3_bucket
 }
