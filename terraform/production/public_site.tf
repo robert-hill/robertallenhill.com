@@ -12,7 +12,7 @@ module "acm_request_certificate" {
 
 module "cloudfront_s3_cdn" {
   source  = "cloudposse/cloudfront-s3-cdn/aws"
-  version = "0.82.4"
+  version = "0.82.5"
 
   name               = "rhill-vcard-website"
   encryption_enabled = true
