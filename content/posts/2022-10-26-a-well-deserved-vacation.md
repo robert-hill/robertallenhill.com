@@ -11,10 +11,10 @@ tags:
   - vacation
   - injury
 categories: ""
-lastmod: 2022-10-27T04:33:22.686Z
+lastmod: 2022-10-27T04:39:13.614Z
 slug: deserved-vacation
 ---
 
 # Foreword
 
-Taking a trip bitches!
+Taking a trip!
