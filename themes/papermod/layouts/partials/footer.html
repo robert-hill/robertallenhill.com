@@ -3,7 +3,7 @@
     {{- if .Site.Copyright }}
     <span>{{ .Site.Copyright | markdownify }}</span>
     {{- else }}
-    <span>&copy; {{ now.Year }} <a href="{{ "" | absLangURL }}">{{ .Site.Title }}</a></span>
+    <span>&copy; {{ now.Year }} <a rel="me" href="https://mastodon.social/@robyr">{{ .Site.Title }}</a></span>
     {{- end }}
     <span>
         Powered by
@@ -133,4 +133,3 @@
     });
 </script>
 {{- end }}
-<a rel="me" href="https://mastodon.social/@robyr"></a>
