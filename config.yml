@@ -83,7 +83,7 @@ params:
         - name: github
           url: "https://github.com/robert-hill"
         - name: Mastodon
-          url: "https://mastodon.social/@robyr"
+          url: "https://rah.social/@robert"
         - name: Twitter
           url: "https://twitter.com/robyr"
         - name: RsS
