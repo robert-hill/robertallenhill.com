@@ -6,7 +6,7 @@ preview: ""
 draft: false
 tags: []
 categories: []
-lastmod: 2023-11-24T05:55:00.176Z
+lastmod: 2023-11-24T05:58:37.628Z
 ---
 
 I have been thinking about this for a bit. I recently acquired a couple really solid cameras and lenses, so I have been really leaning into bringing my camera with me everywhere and capturing interesting moments. 
