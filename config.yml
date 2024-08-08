@@ -116,6 +116,8 @@ params:
     #     threshold: 0.4
     #     minMatchCharLength: 0
     #     keys: ["title", "permalink", "summary", "content"]
+    carouselHomepage:
+        - enable: false
 
 taxonomies:
     category: categories
